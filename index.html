@@ -4,90 +4,149 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Chandrashaker Apps</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600&family=Public+Sans:wght@400;500&family=IBM+Plex+Mono:wght@500&display=swap">
 <style>
   :root {
     color-scheme: light dark;
-    --bg: #f7f7f8;
-    --card-bg: #ffffff;
-    --text: #1a1a1a;
-    --muted: #6b6b6b;
-    --accent: #2f6fed;
-    --border: #e3e3e6;
+    --wall: #eef3fb;
+    --wall-shadow: #d7e3f5;
+    --steel: #1565c0;
+    --icon-stroke: #1565c0;
+    --on-steel: #fdf6ea;
+    --muted: #c9dcf3;
+    --amber: #ff8f00;
+    --amber-ink: #241800;
   }
   @media (prefers-color-scheme: dark) {
     :root {
-      --bg: #14151a;
-      --card-bg: #1e1f26;
-      --text: #f0f0f2;
-      --muted: #9a9aa2;
-      --accent: #6ea0ff;
-      --border: #2c2d35;
+      --wall: #0d1b2e;
+      --wall-shadow: #081221;
+      --steel: #2f6fd6;
+      --icon-stroke: #2f6fd6;
+      --on-steel: #f5f8fc;
+      --muted: #a9c4ec;
+      --amber: #ffb74d;
+      --amber-ink: #241800;
     }
   }
   * { box-sizing: border-box; }
+  html, body { height: 100%; }
   body {
     margin: 0;
-    background: var(--bg);
-    color: var(--text);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    padding: 3rem 1.5rem;
+    background: var(--wall);
+    color: var(--on-steel);
+    font-family: 'Public Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 6vw;
   }
-  .wrap { max-width: 640px; margin: 0 auto; }
-  h1 { font-size: 1.6rem; margin-bottom: 0.25rem; }
-  p.sub { color: var(--muted); margin-top: 0; margin-bottom: 2rem; }
-  .app-list { display: flex; flex-direction: column; gap: 1rem; }
-  a.app-card {
-    display: block;
-    background: var(--card-bg);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 1.1rem 1.3rem;
+  .bank {
+    width: 100%;
+    max-width: 920px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 1.1rem;
+  }
+  a.locker {
+    background: var(--steel);
+    border-radius: 8px;
+    padding: 1.5rem 1.4rem 1.3rem;
+    box-shadow: inset 0 0 0 1px rgba(0,0,0,0.08), 0 1px 0 var(--wall-shadow);
     text-decoration: none;
-    color: inherit;
-    transition: border-color 0.15s ease, transform 0.15s ease;
+    color: var(--on-steel);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
   }
-  a.app-card:hover {
-    border-color: var(--accent);
-    transform: translateY(-1px);
+  a.locker:hover {
+    transform: translateY(-2px);
+    box-shadow: inset 0 0 0 1px rgba(0,0,0,0.08), 0 6px 14px rgba(0,0,0,0.12);
   }
-  .app-name { font-weight: 600; font-size: 1.05rem; margin-bottom: 0.25rem; }
-  .app-desc { color: var(--muted); font-size: 0.92rem; }
-  footer { margin-top: 2.5rem; color: var(--muted); font-size: 0.8rem; }
+  .louvers {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.4rem;
+    width: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+  .louvers span { display: block; height: 2px; background: rgba(0,0,0,0.15); border-radius: 1px; }
+  .icon-plate {
+    width: 56px;
+    height: 56px;
+    border-radius: 5px;
+    background: var(--wall);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: inset 0 0 0 1px rgba(0,0,0,0.1);
+  }
+  .icon-plate svg { width: 30px; height: 30px; stroke: var(--icon-stroke); }
+  .locker h3 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+    font-size: 1.12rem;
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
+    margin: 0;
+  }
+  .locker p { margin: 0.35rem 0 0; font-size: 0.86rem; color: var(--muted); line-height: 1.5; }
+  .locker.soon { opacity: 0.68; }
+  .badge {
+    position: absolute;
+    top: 1.4rem;
+    left: 1.4rem;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--amber-ink);
+    background: var(--amber);
+    padding: 0.15rem 0.45rem;
+    border-radius: 3px;
+  }
 </style>
 </head>
 <body>
-  <div class="wrap">
-    <h1>Chandrashaker Apps</h1>
-    <p class="sub">A directory of standalone apps.</p>
-    <div class="app-list" id="app-list"></div>
-    <footer>apps.chandrashaker.in</footer>
-  </div>
+  <div class="bank" id="bank"></div>
 
   <script>
-    // Add new entries here — one line per app.
+    // Add new apps here — each one renders as its own locker tile.
     const apps = [
       {
         name: "Student Achievement Tracker",
-        description: "Track student achievements and progress.",
-        url: "https://a.chandrashaker.in"
+        description: "Tracks student achievements",
+        url: "https://a.chandrashaker.in",
+        icon: `<path d="M6 24 L6 18 M13 24 L13 13 M20 24 L20 9 M27 24 L27 15"/><path d="M20 9 L27 4"/><circle cx="27" cy="4" r="2.4"/>`
       },
       {
         name: "Exam Marks Tracker",
-        description: "Enter and manage exam marks.",
-        url: "https://marks.chandrashaker.in" // TODO: not yet deployed
+        description: "Records student exam marks",
+        url: "https://marks.chandrashaker.in",
+        icon: `<rect x="7" y="5" width="18" height="23" rx="1.5"/><path d="M12 3.5 h8 v3 h-8 z"/><path d="M11.5 13 l2.5 2.5 l4-4.5"/><path d="M11.5 20 h9"/>`,
+        soon: true
       }
     ];
 
-    const list = document.getElementById("app-list");
+    const bank = document.getElementById("bank");
     apps.forEach(app => {
       const a = document.createElement("a");
-      a.className = "app-card";
+      a.className = "locker" + (app.soon ? " soon" : "");
       a.href = app.url;
       a.innerHTML = `
-        <div class="app-name">${app.name}</div>
-        <div class="app-desc">${app.description}</div>
+        <div class="louvers"><span></span><span></span><span></span></div>
+        ${app.soon ? '<span class="badge">soon</span>' : ""}
+        <div class="icon-plate">
+          <svg viewBox="0 0 32 32" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">${app.icon}</svg>
+        </div>
+        <h3>${app.name}</h3>
+        <p>${app.description}</p>
       `;
-      list.appendChild(a);
+      bank.appendChild(a);
     });
   </script>
 </body>
