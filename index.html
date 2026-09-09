@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chandrashaker Apps</title>
+<style>
+  :root {
+    color-scheme: light dark;
+    --bg: #f7f7f8;
+    --card-bg: #ffffff;
+    --text: #1a1a1a;
+    --muted: #6b6b6b;
+    --accent: #2f6fed;
+    --border: #e3e3e6;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14151a;
+      --card-bg: #1e1f26;
+      --text: #f0f0f2;
+      --muted: #9a9aa2;
+      --accent: #6ea0ff;
+      --border: #2c2d35;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    padding: 3rem 1.5rem;
+  }
+  .wrap { max-width: 640px; margin: 0 auto; }
+  h1 { font-size: 1.6rem; margin-bottom: 0.25rem; }
+  p.sub { color: var(--muted); margin-top: 0; margin-bottom: 2rem; }
+  .app-list { display: flex; flex-direction: column; gap: 1rem; }
+  a.app-card {
+    display: block;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.1rem 1.3rem;
+    text-decoration: none;
+    color: inherit;
+    transition: border-color 0.15s ease, transform 0.15s ease;
+  }
+  a.app-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-1px);
+  }
+  .app-name { font-weight: 600; font-size: 1.05rem; margin-bottom: 0.25rem; }
+  .app-desc { color: var(--muted); font-size: 0.92rem; }
+  footer { margin-top: 2.5rem; color: var(--muted); font-size: 0.8rem; }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Chandrashaker Apps</h1>
+    <p class="sub">A directory of standalone apps.</p>
+    <div class="app-list" id="app-list"></div>
+    <footer>apps.chandrashaker.in</footer>
+  </div>
+
+  <script>
+    // Add new entries here — one line per app.
+    const apps = [
+      {
+        name: "Student Achievement Tracker",
+        description: "Track student achievements and progress.",
+        url: "https://a.chandrashaker.in"
+      },
+      {
+        name: "Exam Marks Tracker",
+        description: "Enter and manage exam marks.",
+        url: "https://marks.chandrashaker.in" // TODO: not yet deployed
+      }
+    ];
+
+    const list = document.getElementById("app-list");
+    apps.forEach(app => {
+      const a = document.createElement("a");
+      a.className = "app-card";
+      a.href = app.url;
+      a.innerHTML = `
+        <div class="app-name">${app.name}</div>
+        <div class="app-desc">${app.description}</div>
+      `;
+      list.appendChild(a);
+    });
+  </script>
+</body>
+</html>
