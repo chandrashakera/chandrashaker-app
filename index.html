@@ -57,13 +57,17 @@
     grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
     gap: 1.1rem;
   }
-  .privacy-link {
-    text-align: center;
+  .footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
     font-size: 0.78rem;
+  }
+  .footer-links a {
     color: var(--wall-muted);
     text-decoration: none;
   }
-  .privacy-link:hover { color: var(--steel); text-decoration: underline; }
+  .footer-links a:hover { color: var(--steel); text-decoration: underline; }
   a.locker {
     background: var(--steel);
     border-radius: 8px;
@@ -130,7 +134,10 @@
 <body>
   <div class="page">
     <div class="bank" id="bank"></div>
-    <a class="privacy-link" href="https://apps.chandrashaker.in/privacy.html">Privacy</a>
+    <div class="footer-links">
+      <a href="https://chandrashaker.in">Main Website</a>
+      <a href="https://apps.chandrashaker.in/privacy.html">Privacy</a>
+    </div>
   </div>
 
   <script>
