@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Chandrashaker — Privacy Notice</title>
+<style>
+  :root {
+    color-scheme: light dark;
+    --bg: #ffffff;
+    --text: #1a1a1a;
+    --muted: #5b5f66;
+    --accent: #1565c0;
+    --border: #dfe3e8;
+    --section-bg: #eef3fb;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14161a;
+      --text: #eef1f6;
+      --muted: #a2a8b3;
+      --accent: #5b9bef;
+      --border: #2a2e35;
+      --section-bg: #182234;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    max-width: 720px;
+    margin: 2rem auto;
+    padding: 0 1.25rem 3rem;
+    line-height: 1.6;
+    color: var(--text);
+    background: var(--bg);
+  }
+  h1 { font-size: 1.55rem; margin-bottom: 0.3rem; }
+  h2 { font-size: 1.15rem; margin-top: 2rem; }
+  h3 { font-size: 1.02rem; margin: 0 0 0.6rem; color: var(--accent); }
+  .updated { color: var(--muted); font-size: 0.9rem; margin-top: 0; }
+  a { color: var(--accent); }
+  .app-section {
+    background: var(--section-bg);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.25rem 1.4rem;
+    margin: 1.5rem 0;
+  }
+  .app-section h3 { display: flex; align-items: baseline; gap: 0.5rem; flex-wrap: wrap; }
+  .app-section .domain { font-size: 0.8rem; font-weight: 400; color: var(--muted); font-family: ui-monospace, monospace; }
+  .app-section h4 { font-size: 0.92rem; margin: 1rem 0 0.35rem; }
+  .app-section p, .app-section ul { margin: 0.3rem 0; font-size: 0.95rem; }
+  footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--border); font-size: 0.9rem; color: var(--muted); }
+  footer a { margin-right: 1rem; }
+</style>
+</head>
+<body>
+
+<h1>Chandrashaker — Privacy Notice</h1>
+<p class="updated">Last updated: September 2026</p>
+
+<p>This is the single, common privacy notice for every app linked from <a href="https://apps.chandrashaker.in">apps.chandrashaker.in</a> — currently the Student Achievement Tracker and Exam Marks Tracker, and any app added here in future. All are run by Chandras Edu. This notice covers those apps specifically; the main site's <a href="https://chandrashaker.in/privacy-policy/">Privacy Policy</a> covers chandrashaker.in itself.</p>
+
+<h2>Kinds of data these apps may collect</h2>
+<p>Depending on what a given app is for, it may collect one or more of the following. This list describes the categories we draw from across all apps — <strong>the section for each app below is the authoritative record of exactly what that app collects</strong>; if something isn't listed there, that app doesn't collect it.</p>
+<ul>
+  <li><strong>Identifiers</strong> — such as your roll number or name</li>
+  <li><strong>Contact details</strong> — such as an email address or mobile number, only if a given app needs to reach you directly</li>
+  <li><strong>Academic records</strong> — such as achievements, certificates, or exam marks</li>
+  <li><strong>Uploaded images or documents</strong> — such as scanned certificates or marks sheets, generally processed via OCR/AI extraction that you review before anything is saved</li>
+  <li><strong>Basic usage data</strong> — such as submission timestamps, only where relevant to an app's record-keeping</li>
+</ul>
+<p>As new apps are added under chandrashaker.in subdomains, they get their own section below rather than a separate privacy page — this one notice stays current for all of them.</p>
+
+<div class="app-section">
+  <h3>Student Achievement Tracker <span class="domain">a.chandrashaker.in</span></h3>
+
+  <h4>What we collect</h4>
+  <p>When you submit a certificate through this app, we collect:</p>
+  <ul>
+    <li>Your roll number</li>
+    <li>Your name (as it appears on the certificate)</li>
+    <li>Certificate type and category, position/rank, event or activity name, issuing body, and date</li>
+    <li>The certificate image itself (scanned or uploaded)</li>
+  </ul>
+
+  <h4>How it's processed</h4>
+  <p>The certificate image is processed using OCR/AI extraction to pre-fill the details above. You review and correct every field before submitting — the AI extraction is a starting point, not a final record, since handwritten or stylised text can be misread.</p>
+</div>
+
+<div class="app-section">
+  <h3>Exam Marks Tracker <span class="domain">marks.chandrashaker.in</span></h3>
+
+  <h4>What we collect</h4>
+  <p>When you submit exam marks through this app, we collect:</p>
+  <ul>
+    <li>Your roll number (auto-captured from the boxed H.T. No. field on your marks sheet, always editable)</li>
+    <li>A photo/scan of your marks sheet, kept alongside your entry for reference</li>
+    <li>Per-question marks (objective questions, subjective questions, assignment marks) and the computed totals</li>
+  </ul>
+  <p>This app does not collect your name — only your roll number identifies your submission.</p>
+
+  <h4>How it's processed</h4>
+  <p>OCR is used to pre-fill your roll number and, optionally, marks written in the margin of the sheet. These are suggestions only — every field stays editable, and you confirm the final total against the physical sheet before it can be submitted.</p>
+</div>
+
+<h2>Why we collect it</h2>
+<p>Across both apps, this information is used solely for institutional record-keeping — student achievement records or exam attainment data — reducing manual collection and verification work. It is not used for advertising, profiling, or any purpose unrelated to that record-keeping.</p>
+
+<h2>Where it's stored</h2>
+<p>Submitted data and images from both apps are stored in Google Sheets and Google Drive, under the same personal Google account's standard access controls. We do not sell this data or share it with third parties outside the institutional purpose described above.</p>
+
+<h2>If you are under 18</h2>
+<p>India's Digital Personal Data Protection Act treats anyone under 18 as a child, with additional protections around consent. If you are under 18, please make sure a parent, guardian, or your institution is aware that you are submitting this information before you proceed.</p>
+
+<h2>Your rights</h2>
+<p>You can request access to, correction of, or deletion of your submitted data — from either app — at any time by emailing <a href="mailto:mailchandrasedu@gmail.com">mailchandrasedu@gmail.com</a> or contacting us through the <a href="https://chandrashaker.in/contact/">main site's contact page</a>. We aim to respond within a reasonable time and in line with the DPDP Act's data principal rights.</p>
+
+<h2>Changes to this notice</h2>
+<p>We may update this notice as these apps evolve, as new apps are added, or if an app starts collecting a new kind of data (for example, an email address or mobile number). The "last updated" date above will reflect the most recent revision.</p>
+
+<footer>
+  <a href="https://apps.chandrashaker.in">Apps Directory</a>
+  <a href="https://a.chandrashaker.in">Student Achievement Tracker</a>
+  <a href="https://marks.chandrashaker.in">Exam Marks Tracker</a>
+  <a href="https://chandrashaker.in">Main Website</a>
+</footer>
+
+</body>
+</html>
