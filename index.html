@@ -42,13 +42,26 @@
     justify-content: center;
     padding: 3rem 6vw;
   }
-  .bank {
+  .page {
     width: 100%;
     max-width: 920px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.3rem;
+  }
+  .bank {
+    width: 100%;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
     gap: 1.1rem;
   }
+  .privacy-link {
+    text-align: center;
+    font-size: 0.78rem;
+    color: var(--muted);
+    text-decoration: none;
+  }
+  .privacy-link:hover { text-decoration: underline; }
   a.locker {
     background: var(--steel);
     border-radius: 8px;
@@ -113,7 +126,10 @@
 </style>
 </head>
 <body>
-  <div class="bank" id="bank"></div>
+  <div class="page">
+    <div class="bank" id="bank"></div>
+    <a class="privacy-link" href="https://apps.chandrashaker.in/privacy.html">Privacy</a>
+  </div>
 
   <script>
     // Add new apps here — each one renders as its own locker tile.
